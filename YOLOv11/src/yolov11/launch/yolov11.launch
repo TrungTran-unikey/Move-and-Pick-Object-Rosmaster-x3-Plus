@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find astra_camera)/launch/astraproplus.launch"/>
+    <node pkg="yolov11" type="ROS_YOLO.py" name="YOLOv11" required="true" output="screen"/>
+</launch>

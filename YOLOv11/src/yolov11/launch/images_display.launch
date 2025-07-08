@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find astra_camera)/launch/astraproplus.launch"/>
+    <node pkg="yolov11" type="ros_opencv.py" name="display" required="true" output="screen"/>
+</launch>
