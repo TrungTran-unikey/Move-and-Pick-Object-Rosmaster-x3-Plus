@@ -20,6 +20,7 @@ This script implements the `RosYoloDetector` class, which manages:
 
 - **Dual-model YOLO inference**: Switches between full 2D and horizontal-only correction based on task phase.
 - **Thread-safe robot and state control** using Python threading and locks.
+- **High FPS inference** ~20FPS while running with the YOLOv11n and NCNN format.
 - **Real-time display** with OpenCV, including bounding boxes, FPS, and status overlays.
 - **Clean shutdown** and resource management.
 
@@ -48,7 +49,7 @@ roslaunch yolov11 yolov11.launch
 
 - ROS (tested with Melodic/Noetic)
 - Python 3.8
-- OpenCV, NumPy, ultralytics YOLO
+- OpenCV, NumPy, ultralytics YOLO, NCNN (Can easily download the dependencies with the [`requirements.sh`](YOLOv11/src/yolov11/scripts/requirements.sh) )
 - Custom robot libraries: `Rosmaster_Lib`, `MecanumRobot`, `Robot`
 
 ## Notes
@@ -56,7 +57,7 @@ roslaunch yolov11 yolov11.launch
 - This project is creates from the main configuration from [Yahboom repotory](http://www.yahboom.net/study/ROSMASTER-X3-PLUS)
 - The script expects a compatible camera publishing to `/camera/rgb/image_raw`.
 - YOLO model weights should be placed in `YOLO_weights/` as referenced in the script.
-- For details on the robot API, see [`MecanumRobot`](YOLOv11/src/yolov11/scripts/MecanumRobot.py) and [`ManipulatorController`](YOLOv11/src/yolov11/scripts/MecanumRobot.py).
+- For details on the robot API, see [`MecanumRobot`](YOLOv11/src/yolov11/scripts/MecanumRobot.py).
 
 ---
 
